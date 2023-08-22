@@ -16,6 +16,9 @@ module.exports = {
         "3xl": "0px 0px 0px 2px rgb(240, 242, 248)",
         "4xl": "0px 0px 0px 5px rgb(240, 242, 248)",
       },
+      transitionTimingFunction: {
+        DEFAULT: "cubic-bezier(1.000, 0.005, 1.000, -0.110)",
+      },
     },
   },
   plugins: [],

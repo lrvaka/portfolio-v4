@@ -8,19 +8,18 @@ const inter = Inter({ subsets: ["latin"] });
 const navItems = [
   {
     name: "All",
-    href: "index.html",
   },
   {
     name: "About",
-    href: "about.html",
   },
   {
     name: "Projects",
-    href: "contact.html",
   },
   {
     name: "Media",
-    href: "contact.html",
+  },
+  {
+    name: "Other",
   },
 ];
 
@@ -45,16 +44,16 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           <nav>
             <ul className="flex bg-gray-200 p-[5px] rounded-full relative">
               <div
-                className="w-12 h-8 absolute bg-white rounded-2xl"
+                className=" h-8 absolute bg-white rounded-2xl"
                 style={{
                   left: `${blobLeft}px`,
                   width: `${blobWidth}px`,
-                  transition: "all 0.3s",
+                  transition: "all 0.5s",
                 }}
               ></div>
               {navItems.map((item, index) => (
                 <div
-                  className="font-semibold text-sm cursor-pointer z-10 px-4 h-8 flex items-center"
+                  className="font-semibold text-sm cursor-pointer z-10 px-4 h-8 flex items-center hover:text-gray-500 transition-all"
                   onClick={handleNavItemClick}
                   key={index}
                   data-index={index}

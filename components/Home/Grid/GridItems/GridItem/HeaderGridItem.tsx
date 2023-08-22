@@ -1,59 +1,60 @@
+import { useState, useCallback } from "react";
 import Image from "next/image";
-import headshot from "@/public/headshot.png";
+import { AiOutlineReload } from "react-icons/ai";
+import headshot0 from "@/public/headshot.png";
 import headshot1 from "@/public/headshot-1.png";
 import headshot2 from "@/public/headshot-2.png";
 import headshot3 from "@/public/headshot-3.png";
-import { AiOutlineReload } from "react-icons/ai";
-import { useState } from "react";
 
-const HEADSHOTS = [headshot, headshot1, headshot2, headshot3];
+const HEADSHOTS = [headshot0, headshot1, headshot2, headshot3];
+
+const getRandomHeadshotIndex = (current) => {
+  let randomIndex;
+  do {
+    randomIndex = Math.floor(Math.random() * HEADSHOTS.length);
+  } while (randomIndex === current);
+  return randomIndex;
+};
 
 const HeaderGridItem = () => {
   const [headshotIndex, setHeadshotIndex] = useState(0);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
+
   const [opacity, setOpacity] = useState(1);
   const [rotation, setRotation] = useState(0);
   const [scale, setScale] = useState(1);
-
   const [blobOpacity, setBlobOpacity] = useState(0);
   const [blobScale, setBlobScale] = useState(0);
 
-  const handleHeadshotChange = () => {
-    // Start fade out animation
-    setOpacity(0);
-    setRotation(rotation + 45);
-    setScale(0.5);
+  const handleHeadshotChange = useCallback(() => {
+    setIsButtonDisabled(true);
 
-    // Start blob animation
+    setOpacity(0);
+    setRotation((prevRotation) => prevRotation + 45);
+    setScale(0);
     setBlobOpacity(1);
     setBlobScale(0);
 
-    // Wait for the fade out animation to complete
     setTimeout(() => {
-      let randomIndex;
-      do {
-        randomIndex = Math.floor(Math.random() * HEADSHOTS.length);
-      } while (randomIndex === headshotIndex);
-
-      setHeadshotIndex(randomIndex);
-
-      // Fade in animation
+      setHeadshotIndex((prevIndex) => getRandomHeadshotIndex(prevIndex));
       setOpacity(1);
       setRotation(0);
       setScale(1);
-
-      // Blob animation
       setBlobOpacity(0);
       setBlobScale(2);
-    }, 300); // 300ms is the duration of the fade effect
-  };
+
+      setIsButtonDisabled(false); // Re-enable the button after animations
+    }, 500);
+  }, []);
 
   return (
     <div className="flex flex-col justify-between h-full">
       <button
         onClick={handleHeadshotChange}
+        disabled={isButtonDisabled}
         className="p-2 rounded-full shadow-3xl hover:shadow-4xl transition-all absolute right-4 top-4 bg-white"
       >
-        <div style={{ rotate: `${rotation * 5}deg`, transition: "all 0.3s" }}>
+        <div style={{ rotate: `${rotation * 5}deg`, transition: "all 0.5s" }}>
           <AiOutlineReload />
         </div>
       </button>
@@ -65,7 +66,7 @@ const HeaderGridItem = () => {
           fill
           style={{
             objectFit: "contain",
-            transition: "all 0.3s",
+            transition: "all 0.5s",
             opacity: opacity,
             rotate: `${rotation}deg`,
             scale: `${scale}`,

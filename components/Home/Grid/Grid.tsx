@@ -2,6 +2,7 @@ import GridLayout from "react-grid-layout";
 import GridItemContainer from "./GridItems/GridItem/GridItemContainer";
 import HeaderGridItem from "./GridItems/GridItem/HeaderGridItem";
 import BlogGridItem from "./GridItems/GridItem/BlogGridItem";
+import ProjectGridItem from "./GridItems/GridItem/ProjectGridItem";
 
 const projects = [
   {
@@ -11,7 +12,7 @@ const projects = [
     component: <BlogGridItem />,
   },
   {
-    component: <BlogGridItem />,
+    component: <ProjectGridItem />,
   },
   {
     component: <BlogGridItem />,
@@ -45,7 +46,10 @@ const Grid = () => {
         rowHeight={280}
       >
         {layout.map((item: { i: string }, index: number) => (
-          <div className="bg-white rounded-3xl px-11 py-9 cursor-grab active:cursor-grabbing" key={item.i}>
+          <div
+            className="bg-white rounded-3xl px-11 py-9 cursor-grab active:cursor-grabbing"
+            key={item.i}
+          >
             {projects[index].component}
           </div>
         ))}

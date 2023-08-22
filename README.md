@@ -1,6 +1,5 @@
 This is my new portfolio.
 
-
 Potential Features:
 - [ ] Add a blog
 - [ ] Add a contact form
