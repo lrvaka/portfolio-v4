@@ -8,7 +8,7 @@ import headshot3 from "@/public/headshot-3.png";
 
 const HEADSHOTS = [headshot0, headshot1, headshot2, headshot3];
 
-const getRandomHeadshotIndex = (current) => {
+const getRandomHeadshotIndex = (current: number): number => {
   let randomIndex;
   do {
     randomIndex = Math.floor(Math.random() * HEADSHOTS.length);
