@@ -18,6 +18,7 @@
 
 body {
   background-color: rgb(242, 242, 242);
+  line-height: 1.75rem;
 }
 
 .react-grid-layout {

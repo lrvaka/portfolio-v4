@@ -3,16 +3,25 @@ import GridItemContainer from "./GridItems/GridItem/GridItemContainer";
 import HeaderGridItem from "./GridItems/GridItem/HeaderGridItem";
 import BlogGridItem from "./GridItems/GridItem/BlogGridItem";
 import ProjectGridItem from "./GridItems/GridItem/ProjectGridItem";
+import SpotifyGridItem from "./GridItems/GridItem/SpotifyGridItem";
+
+import bhdigital from "@/public/bhdigital.png";
 
 const projects = [
   {
     component: <HeaderGridItem />,
   },
   {
-    component: <BlogGridItem />,
+    component: <SpotifyGridItem />,
   },
   {
-    component: <ProjectGridItem />,
+    component: (
+      <ProjectGridItem
+        name="Blockhead Digital"
+        image={bhdigital}
+        link="/projects/blockhead-digital"
+      />
+    ),
   },
   {
     component: <BlogGridItem />,

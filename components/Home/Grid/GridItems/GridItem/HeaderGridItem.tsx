@@ -52,7 +52,10 @@ const HeaderGridItem = () => {
       <button
         onClick={handleHeadshotChange}
         disabled={isButtonDisabled}
-        className="p-2 rounded-full shadow-3xl hover:shadow-4xl transition-all absolute right-4 top-4 bg-white"
+        className="p-2 rounded-full shadow-3xl hover:shadow-4xl absolute right-4 top-4 bg-white"
+        style={{
+          transition: "all 0.5s",
+        }}
       >
         <div style={{ rotate: `${rotation * 5}deg`, transition: "all 0.5s" }}>
           <AiOutlineReload />
@@ -86,9 +89,21 @@ const HeaderGridItem = () => {
       </div>
 
       <h2>
-        I&apos;m <span className=" font-bold text-xl">Luke</span>, a developer
-        and designer based in NYC. I&apos;m interested in React, Jamstack,
-        Product Design, Startups, Bitcoin, Athletics and Hawaiian Pizza.
+        I&apos;m{" "}
+        <span
+          className=" font-black text-xl uppercase "
+          style={{
+            background:
+              "-webkit-linear-gradient(right, rgb(236, 72, 153), rgb(239, 68, 68), rgb(234, 179, 8))",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+        >
+          Luke
+        </span>
+        , a developer and designer based in NYC. I&apos;m interested in React,
+        Jamstack, Product Design, Startups, Bitcoin, Athletics and Hawaiian
+        Pizza.
       </h2>
     </div>
   );

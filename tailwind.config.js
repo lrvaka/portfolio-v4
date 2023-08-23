@@ -19,6 +19,18 @@ module.exports = {
       transitionTimingFunction: {
         DEFAULT: "cubic-bezier(1.000, 0.005, 1.000, -0.110)",
       },
+      fontSize: {
+        base: ["1rem", "1rem"],
+      },
+      keyframes: {
+        wiggle: {
+          "0%, 100%": { height: "16px" },
+          "50%": { height: "2px" },
+        },
+      },
+      animation: {
+        "up-down": "wiggle 1s ease-in-out infinite",
+      },
     },
   },
   plugins: [],
