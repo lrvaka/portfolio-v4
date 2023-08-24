@@ -19,7 +19,7 @@ const SpotifyGridItem = () => {
   if (!data) return <div>Loading...</div>;
 
   return (
-    <div className=" px-11 py-9 flex flex-col justify-between py-2 h-full">
+    <div className=" px-11 py-9 flex flex-col justify-between h-full">
       <Image src={spotifyLogo} alt="spotify logo" width={75} />
       <div>
         <h2 className="flex text-green-600 items-center gap-2">
@@ -39,7 +39,7 @@ const SpotifyGridItem = () => {
               {data.recentlyPlayed[0].title}{" "}
             </span>
             <br />
-            <span className="">{data.recentlyPlayed[0].artist}</span>
+            <span className="leading-normal">{data.recentlyPlayed[0].artist}</span>
           </p>
         </a>
       </div>
