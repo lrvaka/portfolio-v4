@@ -1,12 +1,17 @@
+import Image, { StaticImageData } from "next/image";
 import GridLayout from "react-grid-layout";
+import whiteLogo from "@/public/bhdigital/white-logo.png";
+import longLogo from "@/public/bhdigital/long-logo.png";
+import mainLogo from "@/public/bhdigital/main-logo.png";
+import cube from "@/public/bhdigital/cube.png";
+import mobile from "@/public/bhdigital/mobile.png";
 
 const layout = [
-  { i: "a", x: 0, y: 0, w: 2, h: 1 },
-  { i: "b", x: 2, y: 0, w: 1, h: 1 },
-  { i: "c", x: 3, y: 0, w: 1, h: 2 },
-  { i: "d", x: 0, y: 1, w: 1, h: 1 },
-  { i: "e", x: 1, y: 1, w: 1, h: 1 },
-  { i: "f", x: 2, y: 1, w: 1, h: 2 },
+  { i: "a", x: 0, y: 0, w: 1, h: 1, img: whiteLogo },
+  { i: "b", x: 1, y: 0, w: 1, h: 1, img: mainLogo },
+  { i: "c", x: 0, y: 1, w: 2, h: 1, img: longLogo },
+  { i: "d", x: 3, y: 0, w: 1, h: 2, img: cube },
+  { i: "e", x: 2, y: 0, w: 1, h: 2, img: mobile },
 ];
 
 const BlockheadDigital = () => {
@@ -46,7 +51,27 @@ const BlockheadDigital = () => {
         width={1120}
         isResizable={false}
         rowHeight={280}
-      ></GridLayout>
+      >
+        {layout.map(
+          (item: { i: string; img: StaticImageData }, index: number) => (
+            <div
+              className="bg-white rounded-3xl cursor-grab active:cursor-grabbing"
+              key={item.i}
+            >
+              <Image
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  objectFit: "cover",
+                }}
+                src={item.img}
+                className="rounded-3xl"
+                alt="bhdigital"
+              />
+            </div>
+          )
+        )}
+      </GridLayout>
     </div>
   );
 };

@@ -34,7 +34,7 @@ const SpotifyGridItem = () => {
           href={data.recentlyPlayed[0].songUrl}
           className=" cursor-pointer leading-none hover:text-gray-500"
         >
-          <p>
+          <p className="truncate">
             <span className=" font-bold text-xl">
               {data.recentlyPlayed[0].title}{" "}
             </span>
