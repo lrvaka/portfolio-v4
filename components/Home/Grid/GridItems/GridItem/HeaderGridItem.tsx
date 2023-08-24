@@ -48,7 +48,7 @@ const HeaderGridItem = () => {
   }, []);
 
   return (
-    <div className="flex flex-col justify-between h-full">
+    <div className="px-11 py-9 flex flex-col justify-between h-full">
       <button
         onClick={handleHeadshotChange}
         disabled={isButtonDisabled}

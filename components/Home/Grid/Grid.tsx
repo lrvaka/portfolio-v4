@@ -56,7 +56,7 @@ const Grid = () => {
       >
         {layout.map((item: { i: string }, index: number) => (
           <div
-            className="bg-white rounded-3xl px-11 py-9 cursor-grab active:cursor-grabbing"
+            className="bg-white rounded-3xl cursor-grab active:cursor-grabbing"
             key={item.i}
           >
             {projects[index].component}

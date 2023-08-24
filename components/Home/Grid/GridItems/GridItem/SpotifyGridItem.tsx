@@ -19,7 +19,7 @@ const SpotifyGridItem = () => {
   if (!data) return <div>Loading...</div>;
 
   return (
-    <div className="flex flex-col justify-between py-2 h-full">
+    <div className=" px-11 py-9 flex flex-col justify-between py-2 h-full">
       <Image src={spotifyLogo} alt="spotify logo" width={75} />
       <div>
         <h2 className="flex text-green-600 items-center gap-2">

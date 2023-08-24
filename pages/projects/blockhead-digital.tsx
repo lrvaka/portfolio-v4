@@ -1,3 +1,14 @@
+import GridLayout from "react-grid-layout";
+
+const layout = [
+  { i: "a", x: 0, y: 0, w: 2, h: 1 },
+  { i: "b", x: 2, y: 0, w: 1, h: 1 },
+  { i: "c", x: 3, y: 0, w: 1, h: 2 },
+  { i: "d", x: 0, y: 1, w: 1, h: 1 },
+  { i: "e", x: 1, y: 1, w: 1, h: 1 },
+  { i: "f", x: 2, y: 1, w: 1, h: 2 },
+];
+
 const BlockheadDigital = () => {
   return (
     <div className="max-w-6xl mx-auto mt-52 px-4">
@@ -28,6 +39,14 @@ const BlockheadDigital = () => {
           </p>
         </div>
       </div>
+      <GridLayout
+        className="layout"
+        layout={layout}
+        cols={4}
+        width={1120}
+        isResizable={false}
+        rowHeight={280}
+      ></GridLayout>
     </div>
   );
 };

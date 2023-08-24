@@ -22,11 +22,20 @@ const ProjectGridItem = ({ name, image, link }: ProjectGridItemProps) => {
 
   return (
     <div
-      className="w-full h-full absolute top-0 left-0 z-10 rounded-3xl"
+      className="w-full h-full z-10 "
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <Image src={image} fill alt={name} className="rounded-3xl" />
+      <Image
+        style={{
+          height: "100%",
+          width: "100%",
+          objectFit: "cover",
+        }}
+        src={image}
+        alt={name}
+        className="rounded-3xl"
+      />
       <div
         className=" cursor-pointer hover:shadow-4xl absolute bg-white p-3 rounded-[18px] bottom-4 left-4 flex gap-2 items-center h-9 "
         style={{
