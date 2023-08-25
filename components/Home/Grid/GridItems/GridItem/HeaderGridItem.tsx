@@ -62,7 +62,7 @@ const HeaderGridItem = () => {
         </div>
       </button>
 
-      <div className=" w-28 h-28 relative">
+      <div className=" xl:w-28 xl:h-28 h-32 w-32 relative">
         <Image
           src={HEADSHOTS[headshotIndex]}
           alt="hansom boy"
