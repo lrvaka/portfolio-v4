@@ -52,7 +52,7 @@ const HeaderGridItem = () => {
       <button
         onClick={handleHeadshotChange}
         disabled={isButtonDisabled}
-        className="p-2 rounded-full shadow-3xl hover:shadow-4xl absolute right-4 top-4 bg-white"
+        className="p-2 rounded-full shadow-3xl hover:shadow-4xl absolute right-4 top-4 bg-white z-20"
         style={{
           transition: "all 0.5s",
         }}

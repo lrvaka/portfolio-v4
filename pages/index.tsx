@@ -69,10 +69,8 @@ export default function Home() {
           <p className="font-semibold text-sm">Contact</p>
         </a>
       </div>
-      <main className="flex flex-col items-center justify-between max-w-6xl mx-auto ">
-        <section className="pt-[50px] w-full">
-          <Grid />
-        </section>
+      <main className="pt-[50px] max-w-6xl mx-auto ">
+        <Grid />
       </main>
     </>
   );
